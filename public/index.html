@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>System Dashboard</h1>
+        </header>
+        
+        <div class="dashboard-grid">
+            <!-- System Metrics -->
+            <div class="card">
+                <h2>System Metrics</h2>
+                <div class="metrics">
+                    <div class="metric">
+                        <span>CPU Usage</span>
+                        <span id="cpuUsage">-</span>
+                    </div>
+                    <div class="metric">
+                        <span>Memory Usage</span>
+                        <span id="memoryUsage">-</span>
+                    </div>
+                    <div class="metric">
+                        <span>Uptime</span>
+                        <span id="uptime">-</span>
+                    </div>
+                </div>
+                <canvas id="metricsChart"></canvas>
+            </div>
+
+            <!-- Logs Section -->
+            <div class="card">
+                <h2>System Logs</h2>
+                <div class="log-controls">
+                    <select id="logLevel">
+                        <option value="">All Levels</option>
+                        <option value="info">Info</option>
+                        <option value="warn">Warning</option>
+                        <option value="error">Error</option>
+                    </select>
+                    <button onclick="clearLogs()">Clear Logs</button>
+                </div>
+                <div class="logs-container" id="logsContainer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/dashboard.js"></script>
+</body>
+</html>
